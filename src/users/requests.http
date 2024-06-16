@@ -7,3 +7,13 @@ content-type: application/json
     "email": "test@aol.com",
     "password": "password"
 }
+
+### Create another new user
+
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "password"
+}
