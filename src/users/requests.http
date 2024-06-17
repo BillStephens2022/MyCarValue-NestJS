@@ -18,6 +18,16 @@ content-type: application/json
     "password": "password"
 }
 
+### sign in a user
+
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+    "email": "vincentvega@hotmail.com",
+    "password": "password123"
+}
+
 ### Find a particular user with a given Id
 
 GET http://localhost:3000/auth/4
