@@ -1,0 +1,38 @@
+### Create a new user
+
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+    "email": "marsellus@aol.com",
+    "password": "password"
+}
+
+### Create another new user
+
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+    "email": "mia@gmail.com",
+    "password": "password"
+}
+
+### Find a particular user with a given Id
+
+GET http://localhost:3000/auth/4
+
+### Find all users with a given email
+GET http://localhost:3000/auth?email=marsellus@aol.com
+
+### Delete a user with a given Id
+
+DELETE http://localhost:3000/auth/7
+
+### Update a user
+PATCH http://localhost:3000/auth/7
+content-type: application/json
+
+{
+    "password": "bigKahunaBurger"
+}
