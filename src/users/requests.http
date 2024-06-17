@@ -35,6 +35,12 @@ GET http://localhost:3000/auth/4
 ### Find all users with a given email
 GET http://localhost:3000/auth?email=marsellus@aol.com
 
+### Get the currently signed in user
+GET http://localhost:3000/auth/whoami
+
+### Sign out the currently signed in user
+POST http://localhost:3000/auth/signout
+
 ### Delete a user with a given Id
 
 DELETE http://localhost:3000/auth/7
