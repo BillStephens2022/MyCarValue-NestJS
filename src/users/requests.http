@@ -4,8 +4,8 @@ POST http://localhost:3000/auth/signup
 content-type: application/json
 
 {
-    "email": "marsellus@aol.com",
-    "password": "password"
+    "email": "vincentvega@hotmail.com",
+    "password": "password123"
 }
 
 ### Create another new user
