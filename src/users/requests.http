@@ -14,7 +14,7 @@ POST http://localhost:3000/auth/signup
 content-type: application/json
 
 {
-    "email": "mia@gmail.com",
+    "email": "honeybunny@gmail.com",
     "password": "password"
 }
 
