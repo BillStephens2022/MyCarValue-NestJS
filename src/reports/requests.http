@@ -13,9 +13,55 @@ content-type: application/json
     "price": 1250
 }
 
+### add a new car
+
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+    "make": "toyota",
+    "model": "corolla",
+    "year": 1980,
+    "mileage": 108000,
+    "lng": 0,
+    "lat": 0,
+    "price": 750
+}
+
+### add a new car
+
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+    "make": "ford",
+    "model": "mustang",
+    "year": 1980,
+    "mileage": 50000,
+    "lng": 45,
+    "lat": 45,
+    "price": 10000
+}
+
+### add a new car
+
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+    "make": "ford",
+    "model": "mustang",
+    "year": 1982,
+    "mileage": 15000,
+    "lng": 45,
+    "lat": 45,
+    "price": 20000
+}
+
+
 ### approve an existing report
 
-PATCH http://localhost:3000/reports/3
+PATCH http://localhost:3000/reports/6
 content-type: application/json
 
 {
@@ -30,3 +76,9 @@ content-type: application/json
 {
     "approved": false
 }
+
+### Get an estimate for an existing vehicle
+GET http://localhost:3000/reports?make=chevy&model=camaro&lng=0&lat=0&mileage=105300&year=1984
+
+### Get an estimate for an existing vehicle
+GET http://localhost:3000/reports?make=ford&model=mustang&lng=42&lat=42&mileage=20000&year=1981

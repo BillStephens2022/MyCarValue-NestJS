@@ -4,10 +4,27 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Report } from './report.entity';
 import { CreateReportDto } from './dtos/create-report.dto';
 import { User } from '../users/user.entity';
+import { GetEstimateDto } from './dtos/get-estimate.dto';
 
 @Injectable()
 export class ReportsService {
   constructor(@InjectRepository(Report) private repo: Repository<Report>) {}
+
+  createEstimate({ make, model, lng, lat, year, mileage }: GetEstimateDto) {
+    return this.repo
+      .createQueryBuilder()
+      .select('AVG(price)', 'price')  // select the average price
+      .where('make = :make', { make })
+      .andWhere('model = :model', { model })
+      .andWhere('lng - :lng BETWEEN -5 and 5', { lng })  // check if the lng is within 5 degrees of the provided lng
+      .andWhere('lat - :lat BETWEEN -5 and 5', { lat })  // check if the lat is within 5 degrees of the provided lat
+      .andWhere('year - :year BETWEEN -3 and 3', { year })  // check if the year is within 3 years of the provided year
+      .andWhere('approved IS TRUE')  // check if the report is approved by an admin
+      .orderBy('ABS(mileage - :mileage)', 'DESC')  // order by the difference between the mileage and the provided mileage
+      .setParameters({ mileage })  // set the mileage parameter
+      .limit(3)  // limit the results to 3
+      .getRawOne();
+  }
 
   create(reportDto: CreateReportDto, user: User) {
     const report = this.repo.create(reportDto);  
