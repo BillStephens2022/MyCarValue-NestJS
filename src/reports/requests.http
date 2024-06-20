@@ -1,4 +1,4 @@
-# add a new car
+### add a new car
 
 POST http://localhost:3000/reports
 content-type: application/json
@@ -11,4 +11,13 @@ content-type: application/json
     "lng": 0,
     "lat": 0,
     "price": 1250
+}
+
+### approve an existing report
+
+PATCH http://localhost:3000/reports/6
+content-type: application/json
+
+{
+    "approved": true
 }
