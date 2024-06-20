@@ -15,14 +15,16 @@ content-type: application/json
 
 ### approve an existing report
 
-PATCH http://localhost:3000/reports/6
+PATCH http://localhost:3000/reports/3
 content-type: application/json
 
 {
     "approved": true
 }
 
-PATCH http://localhost:3000/reports/6
+### un-approve a report
+
+PATCH http://localhost:3000/reports/3
 content-type: application/json
 
 {

@@ -14,7 +14,7 @@ POST http://localhost:3000/auth/signup
 content-type: application/json
 
 {
-    "email": "honeybunny@gmail.com",
+    "email": "theWolf@gmail.com",
     "password": "password"
 }
 
@@ -24,8 +24,8 @@ POST http://localhost:3000/auth/signin
 content-type: application/json
 
 {
-    "email": "vincentvega@hotmail.com",
-    "password": "password123"
+    "email": "theWolf@gmail.com",
+    "password": "password"
 }
 
 ### Find a particular user with a given Id
